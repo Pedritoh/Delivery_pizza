@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FAEBD7"
+    tools:context="com.example.pedrito.delivery_pizza.Delivery.TelaLogin">
+
+    <ImageView
+        android:id="@+id/Moto"
+        android:layout_width="350dp"
+        android:layout_height="210dp"
+        android:layout_marginTop="26dp"
+        android:background="@drawable/moto"
+        android:visibility="visible"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
+
+    <EditText
+        android:id="@+id/editEmail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Email"
+        android:layout_below="@+id/Moto"
+        android:layout_alignStart="@+id/editSenha" />
+
+    <EditText
+        android:id="@+id/editSenha"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Senha"
+        android:inputType="textPassword"
+        android:layout_marginLeft="144dp"
+        android:layout_marginTop="13dp"
+        android:layout_below="@+id/editEmail"
+        android:layout_centerHorizontal="true" />
+
+    <Button
+        android:id="@+id/btn_Logar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/login"
+        android:layout_below="@+id/editSenha"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:id="@+id/ir_Cadastro"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="144dp"
+        android:text="@string/n_o_possui_cadastro_clique_aqui"
+        android:layout_marginTop="22dp"
+        android:layout_below="@+id/btn_Logar"
+        android:layout_alignStart="@+id/editSenha"
+        android:layout_marginStart="15dp" />
+
+</RelativeLayout>

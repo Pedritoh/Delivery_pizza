@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FAEBD7"
+    tools:context="com.example.pedrito.delivery_pizza.Delivery.Cadastro">
+
+    <EditText
+        android:id="@+id/editNome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="54dp"
+        android:layout_marginTop="59dp"
+        android:ems="10"
+        android:hint="@string/nome"
+        android:inputType="textPersonName"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true" />
+
+    <EditText
+        android:id="@+id/editEndereco"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:ems="10"
+        android:hint="@string/endereco"
+        android:inputType="textPersonName"
+        android:layout_below="@+id/editNome"
+        android:layout_alignStart="@+id/editNome" />
+
+    <EditText
+        android:id="@+id/editNumero"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="@string/numero"
+        android:inputType="textPersonName"
+        android:layout_below="@+id/editEndereco"
+        android:layout_alignStart="@+id/editEndereco"
+        android:layout_marginTop="15dp" />
+
+    <EditText
+        android:id="@+id/editTelefone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="@string/telefone"
+        android:inputType="textPersonName"
+        android:layout_below="@+id/editNumero"
+        android:layout_alignStart="@+id/editNumero"
+        android:layout_marginTop="20dp" />
+
+    <EditText
+        android:id="@+id/editCadEmail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/editTelefone"
+        android:layout_below="@+id/editTelefone"
+        android:layout_marginTop="20dp"
+
+        android:ems="10"
+        android:hint="@string/email"
+        android:inputType="textEmailAddress" />
+
+    <EditText
+        android:id="@+id/editCadSenha"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:ems="10"
+        android:hint="@string/senha"
+        android:inputType="textPassword"
+        android:layout_below="@+id/editCadEmail"
+        android:layout_alignStart="@+id/editCadEmail" />
+
+    <Button
+        android:id="@+id/btnCadastrar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:text="@string/cadastrar"
+        android:layout_below="@+id/editCadSenha"
+        android:layout_toEndOf="@+id/editNumero"
+        android:layout_marginStart="27dp" />
+
+    <Button
+        android:id="@+id/btnCancelar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/btnCadastrar"
+        android:layout_alignBottom="@+id/btnCadastrar"
+        android:layout_alignStart="@+id/editCadSenha"
+        android:text="Cancelar" />
+
+    <TextView
+        android:id="@+id/textCriar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="cursive"
+        android:text="Crie sua conta é Grátis!"
+        android:textColor="@android:color/holo_red_dark"
+        android:textSize="30sp"
+        android:layout_alignParentTop="true"
+        android:layout_alignEnd="@+id/btnCadastrar"
+        android:layout_marginTop="11dp" />
+
+    <EditText
+        android:id="@+id/editCidade"
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/editTelefone"
+        android:layout_toEndOf="@+id/editNumero"
+        android:ems="10"
+        android:hint="Cidade"
+        android:inputType="textPersonName" />
+</RelativeLayout>

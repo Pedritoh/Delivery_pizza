@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FAEBD7"
+    tools:context="com.example.pedrito.delivery_pizza.Delivery.FormasPagamento">
+
+    <TextView
+        android:id="@+id/textFormasDePagamento"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="18dp"
+        android:layout_marginTop="43dp"
+        android:text="Qual será a forma de pagamento?"
+        android:textSize="18sp" />
+
+    <CheckBox
+        android:id="@+id/CartaoCredito"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/textFormasDePagamento"
+        android:layout_below="@+id/textFormasDePagamento"
+        android:layout_marginTop="20dp"
+        android:text="Cartão Crédito" />
+
+    <CheckBox
+        android:id="@+id/CartaoDebito"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/CartaoCredito"
+        android:layout_below="@+id/CartaoCredito"
+        android:layout_marginTop="18dp"
+        android:text="Cartão Debito"
+        android:layout_alignEnd="@+id/CartaoCredito" />
+
+    <CheckBox
+        android:id="@+id/Dinheiro"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="17dp"
+        android:text="Dinheiro"
+        android:layout_below="@+id/CartaoDebito"
+        android:layout_alignStart="@+id/CartaoDebito"
+        android:layout_alignEnd="@+id/CartaoCredito" />
+
+    <TextView
+        android:id="@+id/textTroco"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Você vai precisar de troco?"
+        android:layout_centerVertical="true"
+        android:layout_alignStart="@+id/Dinheiro" />
+
+    <EditText
+        android:id="@+id/editTroco"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:ems="10"
+        android:hint="Quanto?"
+        android:inputType="number"
+        android:layout_below="@+id/textTroco"
+        android:layout_alignStart="@+id/textTroco" />
+
+    <EditText
+        android:id="@+id/editEnderecoEntrega"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:layout_below="@+id/editTroco"
+        android:layout_alignStart="@+id/textEndereco"
+        android:layout_marginTop="67dp" />
+
+    <TextView
+        android:id="@+id/textEndereco"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Qual o endereco de entrega?"
+        android:layout_below="@+id/editTroco"
+        android:layout_alignStart="@+id/editTroco"
+        android:layout_marginTop="35dp" />
+
+    <Button
+        android:id="@+id/btnProsseguir"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/editEnderecoEntrega"
+        android:layout_marginStart="25dp"
+        android:layout_toEndOf="@+id/editEnderecoEntrega"
+        android:text="Prosseguir" />
+
+</RelativeLayout>

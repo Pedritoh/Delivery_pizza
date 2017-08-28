@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Delivery_pizza</string>
+    <string name="nome">Nome</string>
+    <string name="endereco">Endereço</string>
+    <string name="cadastrar">Cadastrar</string>
+    <string name="email">Email</string>
+    <string name="numero">Numero</string>
+    <string name="senha">Senha</string>
+    <string name="telefone">Telefone</string>
+    <string name="n_o_possui_cadastro_clique_aqui">Não possui cadastro? Clique aqui</string>
+    <string name="login">Login</string>
+
+</resources>
