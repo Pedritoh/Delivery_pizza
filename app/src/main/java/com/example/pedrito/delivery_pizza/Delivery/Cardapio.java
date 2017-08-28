@@ -41,6 +41,7 @@ public class Cardapio extends Activity {
         cardapio.add("Pizza Calabresa - 38,00");
         cardapio.add("Pizza 4 Queijos - 35,00");
         cardapio.add("Pizza 6 Queijos - 39,00");
+        cardapio.add("Pizza Especial - 40,00");
         return cardapio;
 
     }
