@@ -9,5 +9,7 @@
     <string name="telefone">Telefone</string>
     <string name="n_o_possui_cadastro_clique_aqui">Não possui cadastro? Clique aqui</string>
     <string name="login">Login</string>
+    <string name="nome_cliente">Nome Cliente</string>
+    <string name="novo_pedido">Novo Pedido</string>
 
 </resources>

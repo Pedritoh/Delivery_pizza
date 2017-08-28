@@ -11,25 +11,62 @@
         android:id="@+id/btnNovoPedido"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="78dp"
-        android:text="Novo Pedido"
-        android:layout_marginEnd="17dp"
-        android:layout_below="@+id/TextNomeCliente"
-        android:layout_alignParentEnd="true" />
+        android:text="@string/novo_pedido"
+        android:layout_marginEnd="19dp"
+        android:layout_above="@+id/listView"
+        android:layout_alignParentEnd="true"
+        android:layout_marginBottom="29dp" />
 
     <TextView
         android:id="@+id/TextNomeCliente"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="28dp"
-        android:text="Nome Cliente"
-        android:textSize="24sp"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true" />
+        android:layout_alignBottom="@+id/txtBemVindo"
+        android:layout_marginStart="12dp"
+        android:layout_toEndOf="@+id/txtBemVindo"
+        android:fontFamily="cursive"
+        android:text="@string/nome_cliente"
+        android:textColor="?attr/colorPrimaryDark"
+        android:textSize="26sp" />
 
     <ListView
         android:layout_width="match_parent"
         android:layout_height="250dp"
         android:layout_alignParentBottom="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:id="@+id/listView" />
+
+    <Button
+        android:id="@+id/btnCardapio"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Cardapio"
+        android:layout_marginStart="31dp"
+        android:layout_above="@+id/listView"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="12dp" />
+
+    <TextView
+        android:id="@+id/txtBemVindo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="cursive"
+        android:text="Bem Vindo "
+        android:textColor="@android:color/holo_red_dark"
+        android:textSize="30sp"
+        android:layout_alignParentTop="true"
+        android:layout_alignStart="@+id/btnCardapio"
+        android:layout_marginTop="25dp" />
+
+    <TextView
+        android:id="@+id/textEx"
+        android:layout_width="20dp"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/TextNomeCliente"
+        android:layout_alignBottom="@+id/TextNomeCliente"
+        android:layout_toEndOf="@+id/TextNomeCliente"
+        android:fontFamily="cursive"
+        android:text=" !"
+        android:textColor="@android:color/holo_red_dark"
+        android:textSize="30sp" />
 </RelativeLayout>

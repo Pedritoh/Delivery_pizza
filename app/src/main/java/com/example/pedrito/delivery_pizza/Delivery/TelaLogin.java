@@ -100,9 +100,15 @@ public class TelaLogin extends Activity {
         @Override
         protected void onPostExecute(String resultado) {
 
-            email1.setText(resultado);
-            if (resultado.contains("login_ok")){
-                startActivity(new Intent(TelaLogin.this,TelaInicial.class));
+            if (resultado.contains("login_ok,")){
+                String[] dados = resultado.split(",");
+
+              //  email1.setText(resultado + dados[0]);
+              Intent abreInicio = new Intent(TelaLogin.this,TelaInicial.class);
+              abreInicio.putExtra("nome_usuario",dados[1]);
+             // abreInicio.putExtra("id_usario",dados[1]);
+                startActivity(abreInicio);
+
             }
             else{
 
