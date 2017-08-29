@@ -34,14 +34,20 @@ public class Cardapio extends Activity {
     private ArrayList<String> todosOsCardapios() {
 
         ArrayList<String> cardapio = new ArrayList<String>();
-        cardapio.add("Pizza Mineira - 40,00");
-        cardapio.add("Pizza Provolone - 35,00");
-        cardapio.add("Pizza Paulista - 36,00");
-        cardapio.add("Pizza Portuguesa - 37,00");
-        cardapio.add("Pizza Calabresa - 38,00");
-        cardapio.add("Pizza 4 Queijos - 35,00");
-        cardapio.add("Pizza 6 Queijos - 39,00");
-        cardapio.add("Pizza Especial - 40,00");
+        cardapio.add("Tradizionale - 36,50");
+        cardapio.add("Margherita - 35,00");
+        cardapio.add("La Vera Napoletana - 36,00");
+        cardapio.add("Quatro Formaggi - 37,00");
+        cardapio.add("Calabresa - 38,00");
+        cardapio.add("Calábria - 35,00");
+        cardapio.add("Pepperoni - 39,00");
+        cardapio.add("Camarão - 40,00");
+        cardapio.add("Della Nonna - 37,00");
+        cardapio.add("Sapore - 40,00");
+        cardapio.add("Portuguesa - 39,50");
+        cardapio.add("Funghi Rossa - 40,00");
+        cardapio.add("Pescara - 37,50");
+        cardapio.add("Palmito - 38,50");
         return cardapio;
 
     }

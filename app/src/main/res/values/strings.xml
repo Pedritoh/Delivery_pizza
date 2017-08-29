@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Delivery_pizza</string>
+    <string name="app_name">Pediu Chegou!</string>
     <string name="nome">Nome</string>
     <string name="endereco">Endereço</string>
     <string name="cadastrar">Cadastrar</string>
@@ -11,5 +11,7 @@
     <string name="login">Login</string>
     <string name="nome_cliente">Nome Cliente</string>
     <string name="novo_pedido">Novo Pedido</string>
+    <string name="Exclamation">!</string>
+    <string name="bem_vindo">Bem Vindo</string>
 
 </resources>

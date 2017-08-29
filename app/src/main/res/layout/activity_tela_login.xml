@@ -42,19 +42,21 @@
         android:id="@+id/btn_Logar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/login"
         android:layout_below="@+id/editSenha"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:text="@string/login" />
 
     <TextView
         android:id="@+id/ir_Cadastro"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="144dp"
-        android:text="@string/n_o_possui_cadastro_clique_aqui"
-        android:layout_marginTop="22dp"
         android:layout_below="@+id/btn_Logar"
-        android:layout_alignStart="@+id/editSenha"
-        android:layout_marginStart="15dp" />
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="144dp"
+        android:layout_marginTop="36dp"
+        android:text="@string/n_o_possui_cadastro_clique_aqui"
+        android:textAlignment="center"
+        android:textColor="@android:color/holo_red_dark"
+        android:textStyle="bold" />
 
 </RelativeLayout>

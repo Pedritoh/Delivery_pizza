@@ -9,25 +9,29 @@
 
     <Button
         android:id="@+id/btnNovoPedido"
+        style="@style/Widget.AppCompat.Button.Borderless.Colored"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:fadeScrollbars="false"
+        android:shadowColor="@color/colorPrimaryDark"
         android:text="@string/novo_pedido"
-        android:layout_marginEnd="19dp"
-        android:layout_above="@+id/listView"
-        android:layout_alignParentEnd="true"
-        android:layout_marginBottom="29dp" />
+        android:textColor="@android:color/holo_red_dark"
+        android:textColorLink="@android:color/holo_red_dark"
+        android:layout_alignBaseline="@+id/btnCardapio"
+        android:layout_alignBottom="@+id/btnCardapio"
+        android:layout_alignEnd="@+id/textAViso" />
 
     <TextView
         android:id="@+id/TextNomeCliente"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/txtBemVindo"
-        android:layout_marginStart="12dp"
-        android:layout_toEndOf="@+id/txtBemVindo"
         android:fontFamily="cursive"
         android:text="@string/nome_cliente"
         android:textColor="?attr/colorPrimaryDark"
-        android:textSize="26sp" />
+        android:textSize="26sp"
+        android:layout_below="@+id/txtBemVindo"
+        android:layout_toEndOf="@+id/imageView2"
+        android:layout_marginStart="42dp" />
 
     <ListView
         android:layout_width="match_parent"
@@ -41,32 +45,54 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Cardapio"
-        android:layout_marginStart="31dp"
+        android:layout_marginBottom="60dp"
+        android:layout_marginStart="32dp"
         android:layout_above="@+id/listView"
-        android:layout_alignParentStart="true"
-        android:layout_marginBottom="12dp" />
+        android:layout_alignParentStart="true" />
 
     <TextView
         android:id="@+id/txtBemVindo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="cursive"
-        android:text="Bem Vindo "
+        android:text="@string/bem_vindo"
         android:textColor="@android:color/holo_red_dark"
         android:textSize="30sp"
-        android:layout_alignParentTop="true"
-        android:layout_alignStart="@+id/btnCardapio"
-        android:layout_marginTop="25dp" />
+        android:layout_alignTop="@+id/imageView2"
+        android:layout_toEndOf="@+id/btnCardapio" />
 
     <TextView
         android:id="@+id/textEx"
         android:layout_width="20dp"
         android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/TextNomeCliente"
-        android:layout_alignBottom="@+id/TextNomeCliente"
-        android:layout_toEndOf="@+id/TextNomeCliente"
         android:fontFamily="cursive"
-        android:text=" !"
+        android:text="@string/Exclamation"
         android:textColor="@android:color/holo_red_dark"
-        android:textSize="30sp" />
+        android:textSize="30sp"
+        android:layout_above="@+id/TextNomeCliente"
+        android:layout_alignEnd="@+id/TextNomeCliente"
+        android:layout_marginEnd="7dp" />
+
+    <TextView
+        android:id="@+id/textAViso"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="cursive"
+        android:text="Faça um novo pedido aqui !"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="30sp"
+        android:layout_marginBottom="20dp"
+        android:layout_above="@+id/btnNovoPedido"
+        android:layout_centerHorizontal="true" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="240dp"
+        android:layout_height="100dp"
+        android:layout_alignEnd="@+id/btnCardapio"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="37dp"
+        app:srcCompat="@drawable/icon" />
 </RelativeLayout>
