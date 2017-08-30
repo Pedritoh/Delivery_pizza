@@ -15,7 +15,7 @@
         android:layout_alignParentTop="true"
         android:layout_marginStart="18dp"
         android:layout_marginTop="43dp"
-        android:text="Qual será a forma de pagamento?"
+        android:text="@string/qual_ser_a_forma_de_pagamento"
         android:textSize="18sp" />
 
     <CheckBox
@@ -25,7 +25,7 @@
         android:layout_alignStart="@+id/textFormasDePagamento"
         android:layout_below="@+id/textFormasDePagamento"
         android:layout_marginTop="20dp"
-        android:text="Cartão Crédito" />
+        android:text="@string/cart_o_cr_dito" />
 
     <CheckBox
         android:id="@+id/CartaoDebito"
@@ -34,7 +34,7 @@
         android:layout_alignStart="@+id/CartaoCredito"
         android:layout_below="@+id/CartaoCredito"
         android:layout_marginTop="18dp"
-        android:text="Cartão Debito"
+        android:text="@string/cart_o_debito"
         android:layout_alignEnd="@+id/CartaoCredito" />
 
     <CheckBox
@@ -42,7 +42,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="17dp"
-        android:text="Dinheiro"
+        android:text="@string/dinheiro"
         android:layout_below="@+id/CartaoDebito"
         android:layout_alignStart="@+id/CartaoDebito"
         android:layout_alignEnd="@+id/CartaoCredito" />
@@ -51,7 +51,7 @@
         android:id="@+id/textTroco"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Você vai precisar de troco?"
+        android:text="@string/voc_vai_precisar_de_troco"
         android:layout_centerVertical="true"
         android:layout_alignStart="@+id/Dinheiro" />
 
@@ -70,17 +70,18 @@
         android:id="@+id/editEnderecoEntrega"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:layout_below="@+id/editTroco"
         android:layout_alignStart="@+id/textEndereco"
-        android:layout_marginTop="67dp" />
+        android:layout_below="@+id/textEndereco"
+        android:layout_marginTop="16dp"
+        android:ems="10"
+        android:hint="Endereço"
+        android:inputType="text" />
 
     <TextView
         android:id="@+id/textEndereco"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Qual o endereco de entrega?"
+        android:text="@string/qual_o_endereco_de_entrega"
         android:layout_below="@+id/editTroco"
         android:layout_alignStart="@+id/editTroco"
         android:layout_marginTop="35dp" />

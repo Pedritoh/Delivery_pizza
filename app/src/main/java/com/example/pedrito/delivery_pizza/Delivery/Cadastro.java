@@ -18,7 +18,7 @@ import com.example.pedrito.delivery_pizza.R;
 public class Cadastro extends Activity {
 
 
-    EditText nomeCad, enderecoCad, numeroCad, cidadeCad, telefoneCad, emailCad, senhaCad;
+    EditText nomeCad,sobrenomeCad,dddCad,telefoneCad,cidadeCad,ufCad, logradouroCad, numeroCad,bairroCad,complementoCad,emailCad, senhaCad;
     Button Cadastrar, Cancelar;
 
 
@@ -31,10 +31,15 @@ public class Cadastro extends Activity {
         setContentView(R.layout.activity_cadastro);
 
         nomeCad = (EditText) findViewById(R.id.editNome);
-        enderecoCad = (EditText) findViewById(R.id.editEndereco);
-        numeroCad = (EditText) findViewById(R.id.editNumero);
-        cidadeCad = (EditText) findViewById(R.id.editCidade);
+        sobrenomeCad = (EditText) findViewById(R.id.editSobrenome);
+        dddCad = (EditText) findViewById(R.id.editDDD);
         telefoneCad = (EditText) findViewById(R.id.editTelefone);
+        cidadeCad = (EditText) findViewById(R.id.editCidade);
+        ufCad = (EditText) findViewById(R.id.editEstado);
+        logradouroCad = (EditText) findViewById(R.id.editEndereco);
+        numeroCad = (EditText) findViewById(R.id.editNumero);
+        bairroCad = (EditText) findViewById(R.id.editBairro);
+        complementoCad = (EditText) findViewById(R.id.editComplemento);
         emailCad = (EditText) findViewById(R.id.editCadEmail);
         senhaCad = (EditText) findViewById(R.id.editCadSenha);
 
@@ -59,20 +64,26 @@ public class Cadastro extends Activity {
 
                 if (networkInfo != null && networkInfo.isConnected()) {
                     String nome = nomeCad.getText().toString();
-                    String endereco = enderecoCad.getText().toString();
-                    String numero = numeroCad.getText().toString();
-                    String cidade = cidadeCad.getText().toString();
+                    String sobrenome = sobrenomeCad.getText().toString();
+                    String ddd = dddCad.getText().toString();
                     String telefone = telefoneCad.getText().toString();
+                    String cidade = cidadeCad.getText().toString();
+                    String uf = ufCad.getText().toString();
+                    String logradouro = logradouroCad.getText().toString();
+                    String numero = numeroCad.getText().toString();
+                    String bairro = bairroCad.getText().toString();
+                    String complemento = complementoCad.getText().toString();
                     String email2 = emailCad.getText().toString();
                     String senha2 = senhaCad.getText().toString();
 
 
-                    if (nome.isEmpty() || endereco.isEmpty() || numero.isEmpty() || cidade.isEmpty() || telefone.isEmpty() || email2.isEmpty() || senha2.isEmpty()) {
-                        Toast.makeText(getApplicationContext(), "nenhum campo pode estar vazio", Toast.LENGTH_LONG).show();
+                    if (nome.isEmpty() ||sobrenome.isEmpty()||ddd.isEmpty() || telefone.isEmpty() ||cidade.isEmpty()||uf.isEmpty()|| logradouro.isEmpty() || numero.isEmpty() ||bairro.isEmpty() || email2.isEmpty() || senha2.isEmpty()) {
+                        Toast.makeText(getApplicationContext(), "nenhum campo pode estar vazio, Exceto complementos", Toast.LENGTH_LONG).show();
                     } else {
                         url = "http://10.0.2.2/html/login/registrar.php";
 
-                        parametros = "nome=" + nome + "&endereco=" + endereco + "&numero=" + numero + "&cidade=" + cidade + "&telefone=" + telefone + "&email=" + email2 + "&senha=" + senha2;
+                        parametros = "nome=" + nome +"&sobrenome="+sobrenome+ "&ddd="+ddd+ "&telefone=" + telefone + "&cidade=" + cidade + "&uf="+uf+
+                                "&logradouro=" + logradouro + "&numero=" + numero + "&bairro="+bairro+ "&complemento="+complemento+ "&email=" + email2 + "&senha=" + senha2;
 
                         new SolicitaDados().execute(url);
                     }
