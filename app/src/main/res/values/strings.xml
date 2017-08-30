@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Pediu Chegou!</string>
+    <string name="app_name">Pediu, Chegou!</string>
     <string name="nome">Nome</string>
     <string name="endereco">Endereço</string>
     <string name="cadastrar">Cadastrar</string>

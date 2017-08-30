@@ -11,12 +11,12 @@
         android:id="@+id/Moto"
         android:layout_width="350dp"
         android:layout_height="210dp"
-        android:layout_marginTop="26dp"
+        android:layout_marginTop="36dp"
         android:background="@drawable/moto"
         android:visibility="visible"
+        tools:ignore="ContentDescription"
         android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        tools:ignore="ContentDescription" />
+        android:layout_centerHorizontal="true" />
 
     <EditText
         android:id="@+id/editEmail"

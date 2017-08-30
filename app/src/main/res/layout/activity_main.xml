@@ -7,6 +7,13 @@
     android:layout_height="match_parent"
     tools:context="com.example.pedrito.delivery_pizza.Delivery.Main">
 
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/tb_main"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:minHeight="?attr/actionBarSize"
+        android:background="?attr/colorPrimary" />
+
 
     <ImageView
         android:id="@+id/imageView"
@@ -22,6 +29,7 @@
         android:layout_below="@+id/imageView"
         android:layout_centerHorizontal="true"
         android:background="@android:color/holo_red_dark"
+        android:fontFamily="serif"
         android:text="Começar"
         android:textAlignment="center"
         android:textColor="@android:color/background_light"

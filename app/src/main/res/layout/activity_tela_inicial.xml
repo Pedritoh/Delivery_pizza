@@ -31,13 +31,13 @@
         android:id="@+id/TextNomeCliente"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_below="@+id/txtBemVindo"
+        android:layout_marginStart="42dp"
+        android:layout_toEndOf="@+id/imageView2"
         android:fontFamily="cursive"
         android:text="@string/nome_cliente"
-        android:textColor="?attr/colorPrimaryDark"
-        android:textSize="26sp"
-        android:layout_below="@+id/txtBemVindo"
-        android:layout_toEndOf="@+id/imageView2"
-        android:layout_marginStart="42dp" />
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="26sp" />
 
     <ListView
         android:layout_width="match_parent"
@@ -84,13 +84,13 @@
         android:id="@+id/textAViso"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_above="@+id/btnNovoPedido"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="20dp"
         android:fontFamily="cursive"
         android:text="@string/fa_a_um_novo_pedido_aqui"
         android:textColor="@color/colorPrimaryDark"
-        android:textSize="30sp"
-        android:layout_marginBottom="20dp"
-        android:layout_above="@+id/btnNovoPedido"
-        android:layout_centerHorizontal="true" />
+        android:textSize="30sp" />
 
     <ImageView
         android:id="@+id/imageView2"
