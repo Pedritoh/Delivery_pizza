@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.pedrito.delivery_pizza.Delivery.Auxprodutos">
+
+    <TextView
+        android:id="@+id/textAdicionais"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="cursive"
+        android:text="Deseja recheio nas bordas?"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        tools:layout_editor_absoluteX="29dp"
+        tools:layout_editor_absoluteY="94dp"
+        android:layout_marginBottom="16dp"
+        android:layout_above="@+id/checkBoxBorda2"
+        android:layout_alignStart="@+id/checkBoxBorda" />
+
+    <CheckBox
+        android:id="@+id/checkBoxBorda"
+        android:layout_width="97dp"
+        android:layout_height="33dp"
+        android:text="Nenhum - R$0,00"
+        tools:layout_editor_absoluteX="42dp"
+        tools:layout_editor_absoluteY="131dp"
+        android:layout_marginBottom="17dp"
+        android:layout_above="@+id/checkBoxBorda3"
+        android:layout_alignStart="@+id/textViewRefri" />
+
+    <CheckBox
+        android:id="@+id/checkBoxBorda2"
+        android:layout_width="99dp"
+        android:layout_height="34dp"
+        android:text="Catupiry - R$2,50"
+        tools:layout_editor_absoluteX="218dp"
+        tools:layout_editor_absoluteY="131dp"
+        android:layout_alignBottom="@+id/checkBoxBorda"
+        android:layout_centerHorizontal="true" />
+
+    <CheckBox
+        android:id="@+id/checkBoxBorda3"
+        android:layout_width="97dp"
+        android:layout_height="32dp"
+        android:text="Cheedar - R$2,50"
+        tools:layout_editor_absoluteX="42dp"
+        tools:layout_editor_absoluteY="176dp"
+        android:layout_marginBottom="70dp"
+        android:layout_above="@+id/textViewRefri"
+        android:layout_alignStart="@+id/checkBoxBorda" />
+
+    <TextView
+        android:id="@+id/textViewRefri"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="cursive"
+        android:text="Bebidas?"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        tools:layout_editor_absoluteX="29dp"
+        tools:layout_editor_absoluteY="241dp"
+        android:layout_marginBottom="12dp"
+        android:layout_above="@+id/spinner"
+        android:layout_alignStart="@+id/spinner" />
+
+    <Spinner
+        android:id="@+id/spinner"
+        android:layout_width="223dp"
+        android:layout_height="23dp"
+        tools:layout_editor_absoluteX="42dp"
+        tools:layout_editor_absoluteY="283dp"
+        android:layout_above="@+id/textAviso"
+        android:layout_alignEnd="@+id/textAviso"
+        android:layout_marginBottom="133dp" />
+
+    <TextView
+        android:id="@+id/textAviso"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:text="Este Pedido pode variar entre 40 e 60 Minutos."
+        android:textColor="@android:color/background_dark"
+        android:textSize="18sp"
+        tools:layout_editor_absoluteX="67dp"
+        tools:layout_editor_absoluteY="527dp"
+        android:layout_above="@+id/btnProsseguir2"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="7dp"
+        android:layout_marginBottom="7dp" />
+
+    <Button
+        android:id="@+id/btnProsseguir2"
+        style="@style/Widget.AppCompat.Button.Borderless.Colored"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="serif"
+        android:text="Prosseguir"
+        android:textColor="@color/colorPrimary"
+        android:textStyle="bold"
+        tools:layout_editor_absoluteX="247dp"
+        tools:layout_editor_absoluteY="443dp"
+        android:layout_alignParentBottom="true"
+        android:layout_toEndOf="@+id/textAviso"
+        android:layout_marginBottom="117dp" />
+
+    <TextView
+        android:id="@+id/textQTD"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="cursive"
+        android:text="Quantidade?"
+        android:textColor="@color/colorPrimary"
+        android:textSize="24sp"
+        android:layout_alignBaseline="@+id/textViewRefri"
+        android:layout_alignBottom="@+id/textViewRefri"
+        android:layout_toEndOf="@+id/checkBoxBorda2" />
+
+    <EditText
+        android:id="@+id/editQtd"
+        android:layout_width="50dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textQTD"
+        android:layout_marginStart="7dp"
+        android:layout_toEndOf="@+id/textAdicionais"
+        android:ems="10"
+        android:hint="x2"
+        android:inputType="number" />
+</RelativeLayout>

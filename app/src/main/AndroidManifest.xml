@@ -2,7 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.pedrito.delivery_pizza">
 
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <application
@@ -24,7 +24,9 @@
         <activity android:name=".Delivery.TelaInicial" />
         <activity android:name=".Delivery.Cardapio" />
         <activity android:name=".Delivery.FormasPagamento" />
-        <activity android:name=".Delivery.Recibo"></activity>
+        <activity android:name=".Delivery.Recibo" />
+        <activity android:name=".Delivery.pedidos" />
+        <activity android:name=".Delivery.Auxprodutos"></activity>
     </application>
 
 </manifest>

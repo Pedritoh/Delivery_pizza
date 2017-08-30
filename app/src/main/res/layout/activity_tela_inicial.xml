@@ -36,25 +36,30 @@
         android:layout_toEndOf="@+id/imageView2"
         android:fontFamily="cursive"
         android:text="@string/nome_cliente"
-        android:textColor="@color/colorPrimaryDark"
+        android:textColor="@color/colorAccent"
         android:textSize="26sp" />
 
     <ListView
         android:layout_width="match_parent"
         android:layout_height="250dp"
+        android:id="@+id/listView"
         android:layout_alignParentBottom="true"
-        android:layout_alignParentStart="true"
-        android:id="@+id/listView" />
+        android:layout_alignParentStart="true" />
 
     <Button
         android:id="@+id/btnCardapio"
+        style="@style/Widget.AppCompat.Button.Borderless.Colored"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Cardapio"
+        android:layout_above="@+id/listView"
+        android:layout_alignParentStart="true"
         android:layout_marginBottom="60dp"
         android:layout_marginStart="32dp"
-        android:layout_above="@+id/listView"
-        android:layout_alignParentStart="true" />
+        android:fontFamily="serif"
+        android:text="Cardapio"
+        android:textAlignment="center"
+        android:textColor="@color/colorPrimary"
+        android:textStyle="bold|italic" />
 
     <TextView
         android:id="@+id/txtBemVindo"
@@ -89,7 +94,7 @@
         android:layout_marginBottom="20dp"
         android:fontFamily="cursive"
         android:text="@string/fa_a_um_novo_pedido_aqui"
-        android:textColor="@color/colorPrimaryDark"
+        android:textColor="@android:color/background_dark"
         android:textSize="30sp" />
 
     <ImageView
