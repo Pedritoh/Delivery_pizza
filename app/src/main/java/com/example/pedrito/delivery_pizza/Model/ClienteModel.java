@@ -5,4 +5,5 @@ package com.example.pedrito.delivery_pizza.Model;
  */
 
 public class ClienteModel {
+
 }

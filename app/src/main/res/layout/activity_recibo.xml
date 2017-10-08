@@ -53,14 +53,17 @@
         style="@style/Widget.AppCompat.Button.Borderless.Colored"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginBottom="51dp"
+        android:layout_marginEnd="35dp"
+        android:background="@drawable/shape"
         android:text="Confirmar"
-        android:textColor="@color/colorPrimaryDark"
+        android:textColor="@android:color/background_light"
         android:textSize="18sp"
         android:textStyle="bold"
         tools:layout_editor_absoluteX="225dp"
         tools:layout_editor_absoluteY="549dp"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginEnd="35dp"
-        android:layout_marginBottom="51dp" />
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="236dp" />
 </RelativeLayout>

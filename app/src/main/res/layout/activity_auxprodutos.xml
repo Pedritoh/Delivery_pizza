@@ -97,15 +97,17 @@
         style="@style/Widget.AppCompat.Button.Borderless.Colored"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="117dp"
+        android:background="@drawable/shape"
         android:fontFamily="serif"
         android:text="Prosseguir"
-        android:textColor="@color/colorPrimary"
+        android:textColor="@android:color/background_light"
         android:textStyle="bold"
         tools:layout_editor_absoluteX="247dp"
         tools:layout_editor_absoluteY="443dp"
-        android:layout_alignParentBottom="true"
-        android:layout_toEndOf="@+id/textAviso"
-        android:layout_marginBottom="117dp" />
+        android:layout_alignEnd="@+id/textQTD"
+        android:layout_alignStart="@+id/textQTD" />
 
     <TextView
         android:id="@+id/textQTD"

@@ -95,43 +95,42 @@
         style="@android:style/Widget.Button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_marginBottom="107dp"
-        android:background="@android:color/holo_red_dark"
+        android:layout_alignEnd="@+id/editCadSenha"
+        android:layout_below="@+id/editCadSenha"
+        android:layout_marginTop="100dp"
+        android:background="@drawable/shape"
         android:fontFamily="serif"
         android:text="@string/cadastrar"
         android:textColor="@android:color/background_light"
         android:textSize="18sp"
-        android:textStyle="bold"
-        android:layout_alignEnd="@+id/editCadSenha"
-        android:layout_alignStart="@+id/editSobrenome" />
+        android:textStyle="bold" />
 
     <Button
         android:id="@+id/btnCancelar"
         style="@android:style/Widget.Button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/btnCadastrar"
         android:layout_alignStart="@+id/editCadSenha"
-        android:background="@android:color/holo_red_dark"
+        android:layout_alignTop="@+id/btnCadastrar"
+        android:background="@drawable/shape"
         android:text="Cancelar"
         android:textColor="@android:color/background_light"
         android:textSize="18sp"
-        android:textStyle="bold"
-        android:layout_alignBottom="@+id/btnCadastrar"
-        android:layout_alignTop="@+id/btnCadastrar" />
+        android:textStyle="bold" />
 
     <TextView
         android:id="@+id/textCriar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/editTelefone"
+        android:layout_alignParentTop="true"
+        android:layout_alignStart="@+id/editDDD"
+        android:layout_marginTop="7dp"
         android:fontFamily="cursive"
         android:text="Crie sua conta é Grátis!"
-        android:textColor="@android:color/holo_red_dark"
-        android:textSize="30sp"
-        android:layout_marginTop="7dp"
-        android:layout_alignParentTop="true"
-        android:layout_alignEnd="@+id/editTelefone"
-        android:layout_alignStart="@+id/editDDD" />
+        android:textColor="@android:color/background_dark"
+        android:textSize="30sp" />
 
     <EditText
         android:id="@+id/editSobrenome"

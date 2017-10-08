@@ -93,6 +93,8 @@
         android:layout_below="@+id/editEnderecoEntrega"
         android:layout_marginStart="25dp"
         android:layout_toEndOf="@+id/editEnderecoEntrega"
-        android:text="Prosseguir" />
+        android:background="@drawable/shape"
+        android:text="Prosseguir"
+        android:textColor="@android:color/background_light" />
 
 </RelativeLayout>
