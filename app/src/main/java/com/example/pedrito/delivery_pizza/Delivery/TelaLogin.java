@@ -106,7 +106,12 @@ public class TelaLogin extends Activity {
               //  email1.setText(resultado + dados[0]);
               Intent abreInicio = new Intent(TelaLogin.this,TelaInicial.class);
               abreInicio.putExtra("nome_usuario",dados[1]);
-             // abreInicio.putExtra("id_usario",dados[1]);
+              // abreInicio.putExtra("id_usario",dados[1]);
+
+                if(resultado.contains("cardapio_ok")) {
+                String[] dados2 = resultado.split(",");
+                    abreInicio.putExtra("nomeProduto",dados2[1]);
+                }
                 startActivity(abreInicio);
 
             }

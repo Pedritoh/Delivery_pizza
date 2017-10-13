@@ -1,10 +1,22 @@
 package com.example.pedrito.delivery_pizza.Delivery;
 
 import android.app.Activity;
+import android.content.Context;
+import android.content.Intent;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
+import android.os.AsyncTask;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
+import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ListView;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.pedrito.delivery_pizza.R;
 
@@ -12,8 +24,54 @@ import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Cardapio extends Activity {
 
+import okhttp3.Call;
+import okhttp3.Callback;
+import okhttp3.OkHttpClient;
+import okhttp3.Request;
+import okhttp3.Response;
+
+
+public class Cardapio extends AppCompatActivity {
+
+    Button Refresh;
+
+    //http://localhost/html/login/cardapio.php
+    final static String urlAddress="http://10.0.2.2/html/login/cardapio.php";
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_cardapio);
+
+        final ListView lv= (ListView) findViewById(R.id.lv);
+        Refresh = (Button) findViewById(R.id.Refresh);
+        new Downloader(Cardapio.this,urlAddress,lv).execute();
+    }
+}
+
+
+/*
+public class MainActivity extends AppCompatActivity {
+    final static String urlAddress="http://10.0.2.2/android/spacecraft_select_images.php";
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        final ListView lv= (ListView) findViewById(R.id.lv);
+        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                new Downloader(MainActivity.this,urlAddress,lv).execute();
+            }
+        });
+    }
+}
+ */
+
+/*
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -54,3 +112,4 @@ public class Cardapio extends Activity {
 
 
 }
+*/

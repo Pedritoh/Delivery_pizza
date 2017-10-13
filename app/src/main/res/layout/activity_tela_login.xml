@@ -52,11 +52,11 @@
 
     <Button
         android:id="@+id/btn_Logar"
-        android:layout_width="wrap_content"
+        android:layout_width="120dp"
         android:layout_height="wrap_content"
         android:layout_below="@+id/editSenha"
-        android:layout_centerHorizontal="true"
         android:layout_marginTop="16dp"
+        android:layout_toStartOf="@+id/ir_Cadastro"
         android:background="@drawable/shape"
         android:elevation="0dp"
         android:fontFamily="serif"
@@ -84,25 +84,24 @@
         android:id="@+id/textEmail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/editEmail"
         android:layout_marginEnd="7dp"
-        android:layout_toStartOf="@+id/editEmail"
         android:fontFamily="cursive"
         android:text="@string/email2"
         android:textColor="@color/colorPrimaryDark"
-        android:textSize="30sp" />
+        android:textSize="30sp"
+        android:layout_alignTop="@+id/editEmail"
+        android:layout_toStartOf="@+id/editEmail" />
 
     <TextView
         android:id="@+id/textViewSenha"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/editSenha"
-        android:layout_alignBottom="@+id/editSenha"
-        android:layout_alignEnd="@+id/textEmail"
         android:fontFamily="cursive"
         android:text="@string/senha2"
         android:textColor="@color/colorPrimaryDark"
-        android:textSize="28sp" />
+        android:textSize="28sp"
+        android:layout_alignTop="@+id/editSenha"
+        android:layout_alignEnd="@+id/textEmail" />
 
     <TextView
         android:id="@+id/textCadastroAq"
