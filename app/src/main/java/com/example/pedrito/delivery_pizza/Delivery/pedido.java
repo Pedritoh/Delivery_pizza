@@ -19,14 +19,16 @@ import com.example.pedrito.delivery_pizza.R;
  * Created by Pedrito on 30/08/2017.
  */
 
-/*public class pedido {
-
-    private EditText produtos, auxProduto;
-    private Spinner spinnerCard;
-    String url = "";
-    String parametros = "";
+public class pedido {
 
 
+    String idPedido ;
+
+    public void setIdPedido(String idPedido) {
+        this.idPedido = idPedido;
+    }
+}
+/*
 
         spinnerCard.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -16,6 +16,7 @@ public class TelaInicial extends AppCompatActivity {
     TextView nomeCliente;
     Button Cardapio;
     String nomeUsuario;
+    Button pedido;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,6 +33,14 @@ public class TelaInicial extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(TelaInicial.this,Cardapio.class));
+            }
+        });
+
+        pedido = (Button) findViewById(R.id.btnNovoPedido);
+        pedido.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(TelaInicial.this,pedidos.class));
             }
         });
 

@@ -70,12 +70,12 @@
         android:id="@+id/editEnderecoEntrega"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignStart="@+id/textEndereco"
-        android:layout_below="@+id/textEndereco"
         android:layout_marginTop="16dp"
         android:ems="10"
         android:hint="Endereço"
-        android:inputType="text" />
+        android:inputType="text"
+        android:layout_below="@+id/textEndereco"
+        android:layout_alignStart="@+id/textEndereco" />
 
     <TextView
         android:id="@+id/textEndereco"

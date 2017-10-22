@@ -34,7 +34,6 @@ public class TelaLogin extends Activity {
     private Button Login;
     private TextView Cadastro;
 
-
     String url = "";
     String parametros = "";
 
@@ -63,7 +62,7 @@ public class TelaLogin extends Activity {
                     if (email.isEmpty() || senha.isEmpty()) {
                         Toast.makeText(getApplicationContext(), "nenhum campo pode estar vazio", Toast.LENGTH_LONG).show();
                     } else {
-                        url = "http://10.0.2.2/html/login/logar.php";
+                        url = "http://pediuchegou.ddns.net/aplicativo/logar.php";
 
                         parametros = "email=" + email + "&senha=" + senha;
 

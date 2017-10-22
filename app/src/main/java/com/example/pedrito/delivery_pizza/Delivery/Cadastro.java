@@ -80,7 +80,7 @@ public class Cadastro extends Activity {
                     if (nome.isEmpty() ||sobrenome.isEmpty()||ddd.isEmpty() || telefone.isEmpty() ||cidade.isEmpty()||uf.isEmpty()|| logradouro.isEmpty() || numero.isEmpty() ||bairro.isEmpty() || email2.isEmpty() || senha2.isEmpty()) {
                         Toast.makeText(getApplicationContext(), "nenhum campo pode estar vazio, Exceto complementos", Toast.LENGTH_LONG).show();
                     } else {
-                        url = "http://10.0.2.2/html/login/registrar.php";
+                        url = "http:/10.0.2.2/html/login/registrar.php";
 
                         parametros = "nome=" + nome +"&sobrenome="+sobrenome+ "&ddd="+ddd+ "&telefone=" + telefone + "&cidade=" + cidade + "&uf="+uf+
                                 "&logradouro=" + logradouro + "&numero=" + numero + "&bairro="+bairro+ "&complemento="+complemento+ "&email=" + email2 + "&senha=" + senha2;

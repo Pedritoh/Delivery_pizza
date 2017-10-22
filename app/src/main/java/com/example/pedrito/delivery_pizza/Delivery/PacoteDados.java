@@ -30,7 +30,7 @@ public class PacoteDados {
             {
                 jo.put("nome",nome);
                 jo.put("endereco",endereco);
-                jo.put("numero",endereco);
+                jo.put("numero",numero);
                 jo.put("cidade",cidade);
                 jo.put("telefone",telefone);
                 jo.put("email",email);

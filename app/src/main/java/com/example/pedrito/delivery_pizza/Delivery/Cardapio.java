@@ -1,6 +1,7 @@
 package com.example.pedrito.delivery_pizza.Delivery;
 
 import android.app.Activity;
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.net.ConnectivityManager;
@@ -11,6 +12,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
@@ -20,7 +22,17 @@ import android.widget.Toast;
 
 import com.example.pedrito.delivery_pizza.R;
 
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.io.BufferedInputStream;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.lang.reflect.Array;
+import java.net.HttpURLConnection;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -34,82 +46,165 @@ import okhttp3.Response;
 
 public class Cardapio extends AppCompatActivity {
 
-    Button Refresh;
 
-    //http://localhost/html/login/cardapio.php
-    final static String urlAddress="http://10.0.2.2/html/login/cardapio.php";
+    final static String urlAddress = "http://pediuchegou.ddns.net/aplicativo/cardapio.php";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cardapio);
 
-        final ListView lv= (ListView) findViewById(R.id.lv);
-        Refresh = (Button) findViewById(R.id.Refresh);
-        new Downloader(Cardapio.this,urlAddress,lv).execute();
+        final ListView lv = (ListView) findViewById(R.id.lv);
+
+        new Downloader(Cardapio.this, urlAddress, lv).execute();
     }
-}
+
+     final public class DataParser extends AsyncTask<Void, Void, Boolean> {
+        Context c;
+        String jsonData;
+        ListView lv;
+        ProgressDialog pd;
+        ArrayList<String> spacecrafts = new ArrayList<>();
+        ArrayList<String> spacecrafts2 = new ArrayList<>();
+
+        public DataParser(Context c, String jsonData, ListView lv) {
+            this.c = c;
+            this.jsonData = jsonData;
+            this.lv = lv;
+        }
+
+        @Override
+        protected void onPreExecute() {
+            super.onPreExecute();
+            pd = new ProgressDialog(c);
+            pd.setTitle("Parse");
+            pd.setMessage("Pasring..Please wait");
+            pd.show();
+        }
+
+        @Override
+        protected Boolean doInBackground(Void... params) {
+            return this.parseData();
+        }
+
+        @Override
+        protected void onPostExecute(final Boolean success) {
+            super.onPostExecute(success);
+            pd.dismiss();
+            if (success) {
+                ArrayAdapter adapter = new ArrayAdapter(c, android.R.layout.simple_list_item_1, spacecrafts);
+                lv.setAdapter(adapter);
+                lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                    @Override
+                    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+
+                        Toast.makeText(c, spacecrafts.get(position), Toast.LENGTH_SHORT).show();
+                        Intent intent = new Intent(c.getApplicationContext(), Auxprodutos.class);
+                        String Dado = spacecrafts.get(position).toString();
+                        intent.putExtra("Produto",Dado);
+                        //------------------------------------------------------
+                        //------------Envio de valor -----------------------------
+                        String Dado2 = spacecrafts2.get(position).toString();
+                        intent.putExtra("valor",Dado2);
+                        startActivity(intent);
 
 
-/*
-public class MainActivity extends AppCompatActivity {
-    final static String urlAddress="http://10.0.2.2/android/spacecraft_select_images.php";
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
-        final ListView lv= (ListView) findViewById(R.id.lv);
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                new Downloader(MainActivity.this,urlAddress,lv).execute();
+                    }
+                });
+            } else {
+
             }
-        });
+        }
+
+        private Boolean parseData() {
+            try {
+                JSONArray ja = new JSONArray(jsonData);
+                JSONObject jo;
+                spacecrafts.clear();
+                spacecrafts2.clear();
+
+                for (int i = 0; i < ja.length(); i++) {
+                    jo = ja.getJSONObject(i);
+
+                    String id = jo.getString("codProduto");
+                    String name = jo.getString("nomeProduto");
+
+                    String valor = jo.getString("valorProduto");
+
+
+                    spacecrafts.add(id +" - " + name + "   --   " + valor );
+                    spacecrafts2.add(valor);
+                }
+                return true;
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+            return false;
+        }
+
     }
+    class Downloader extends AsyncTask<Void,Void,String>{
+        Context c;
+        String urlAddess;
+        ListView lv;
+        ProgressDialog pd;
+        public Downloader(Context c, String urlAddess, ListView lv) {
+            this.c = c;
+            this.urlAddess = urlAddess;
+            this.lv = lv;
+        }
+        @Override
+        protected void onPreExecute() {
+            super.onPreExecute();
+            pd=new ProgressDialog(c);
+            pd.setTitle("Retrieve");
+            pd.setMessage("Retrieving..Please wait");
+            pd.show();
+        }
+        @Override
+        protected String doInBackground(Void... params) {
+            return this.downloadData();
+        }
+        @Override
+        protected void onPostExecute(String jsonData) {
+            super.onPostExecute(jsonData);
+            pd.dismiss();
+            if(jsonData.startsWith("Error"))
+            {
+                Toast.makeText(c,"Unsuccessful "+jsonData,Toast.LENGTH_SHORT).show();
+            }else
+            {
+                //PARSE
+                new Cardapio.DataParser(c,jsonData,lv).execute();
+
+            }
+        }
+        private String downloadData()
+        {
+            Object connection=Connector.connect(urlAddess);
+            if(connection.toString().startsWith("Error"))
+            {
+                return connection.toString();
+            }
+            try {
+                HttpURLConnection con= (HttpURLConnection) connection;
+                InputStream is=new BufferedInputStream(con.getInputStream());
+                BufferedReader br=new BufferedReader(new InputStreamReader(is));
+                String line;
+                StringBuffer jsonData=new StringBuffer();
+                while ((line=br.readLine()) != null)
+                {
+                    jsonData.append(line+"n");
+                }
+                br.close();
+                is.close();
+                return jsonData.toString();
+            } catch (IOException e) {
+                e.printStackTrace();
+                return "Error "+e.getMessage();
+            }
+        }
+    }
+
 }
- */
 
-/*
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_cardapio);
-
-        ListView Cardapio = (ListView) findViewById(R.id.listCardapio);
-        ArrayList<String> cardapios = todosOsCardapios();
-
-
-
-        ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, cardapios);
-        Cardapio.setAdapter(arrayAdapter);
-
-
-
-    }
-
-    private ArrayList<String> todosOsCardapios() {
-
-        ArrayList<String> cardapio = new ArrayList<String>();
-        cardapio.add("Tradizionale - 36,50");
-        cardapio.add("Margherita - 35,00");
-        cardapio.add("La Vera Napoletana - 36,00");
-        cardapio.add("Quatro Formaggi - 37,00");
-        cardapio.add("Calabresa - 38,00");
-        cardapio.add("Calábria - 35,00");
-        cardapio.add("Pepperoni - 39,00");
-        cardapio.add("Camarão - 40,00");
-        cardapio.add("Della Nonna - 37,00");
-        cardapio.add("Sapore - 40,00");
-        cardapio.add("Portuguesa - 39,50");
-        cardapio.add("Funghi Rossa - 40,00");
-        cardapio.add("Pescara - 37,50");
-        cardapio.add("Palmito - 38,50");
-        return cardapio;
-
-    }
-
-
-}
-*/
