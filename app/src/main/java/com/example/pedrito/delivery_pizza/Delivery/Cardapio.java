@@ -132,7 +132,7 @@ public class Cardapio extends AppCompatActivity {
                     String valor = jo.getString("valorProduto");
 
 
-                    spacecrafts.add(id +" - " + name + "   --   " + valor );
+                    spacecrafts.add( name + "   --               " +  "R$"+ valor+",00" );
                     spacecrafts2.add(valor);
                 }
                 return true;

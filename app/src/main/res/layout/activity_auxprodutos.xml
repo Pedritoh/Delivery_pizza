@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#FFF9C4"
     tools:context="com.example.pedrito.delivery_pizza.Delivery.Auxprodutos">
 
     <TextView
@@ -17,146 +18,213 @@
         android:textStyle="bold"
         tools:layout_editor_absoluteX="29dp"
         tools:layout_editor_absoluteY="94dp"
-        android:layout_above="@+id/checkBoxBorda"
-        android:layout_alignStart="@+id/textAviso"
-        android:layout_marginStart="20dp" />
+        android:layout_marginTop="14dp"
+        android:layout_below="@+id/PizzaNome"
+        android:layout_alignEnd="@+id/checkCatupiry"
+        android:layout_marginEnd="32dp" />
 
     <CheckBox
-        android:id="@+id/checkBoxBorda"
+        android:id="@+id/BoxNenhum"
         android:layout_width="97dp"
         android:layout_height="33dp"
         android:text="Nenhum - R$0,00"
         tools:layout_editor_absoluteX="42dp"
         tools:layout_editor_absoluteY="131dp"
-        android:layout_marginBottom="17dp"
-        android:layout_above="@+id/checkBoxBorda3"
-        android:layout_alignStart="@+id/textViewRefri" />
+        android:layout_alignBottom="@+id/checkCatupiry"
+        android:layout_alignStart="@+id/textAdicionais" />
 
     <CheckBox
-        android:id="@+id/checkBoxBorda2"
+        android:id="@+id/checkCatupiry"
         android:layout_width="99dp"
         android:layout_height="34dp"
-        android:text="Catupiry - R$2,50"
-        tools:layout_editor_absoluteX="218dp"
-        tools:layout_editor_absoluteY="131dp"
+        android:layout_alignParentEnd="true"
         android:layout_below="@+id/textAdicionais"
-        android:layout_centerHorizontal="true" />
+        android:layout_marginEnd="100dp"
+        android:text="Catupiry  -  + R$2,00"
+        tools:layout_editor_absoluteX="218dp"
+        tools:layout_editor_absoluteY="131dp" />
 
     <CheckBox
-        android:id="@+id/checkBoxBorda3"
+        android:id="@+id/checkCheedar"
         android:layout_width="97dp"
         android:layout_height="32dp"
-        android:text="Cheedar - R$2,50"
+        android:layout_alignStart="@+id/BoxNenhum"
+        android:layout_below="@+id/BoxNenhum"
+        android:layout_marginTop="36dp"
+        android:text="Cheedar -  + R$3,00"
         tools:layout_editor_absoluteX="42dp"
-        tools:layout_editor_absoluteY="176dp"
-        android:layout_marginBottom="26dp"
-        android:layout_above="@+id/textViewRefri"
-        android:layout_alignStart="@+id/textViewRefri" />
-
-    <TextView
-        android:id="@+id/textViewRefri"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="cursive"
-        android:text="Bebidas?"
-        android:textColor="@color/colorPrimaryDark"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        tools:layout_editor_absoluteX="29dp"
-        tools:layout_editor_absoluteY="241dp"
-        android:layout_marginBottom="12dp"
-        android:layout_above="@+id/spinner"
-        android:layout_alignStart="@+id/spinner" />
-
-    <Spinner
-        android:id="@+id/spinner"
-        android:layout_width="223dp"
-        android:layout_height="23dp"
-        tools:layout_editor_absoluteX="42dp"
-        tools:layout_editor_absoluteY="283dp"
-        android:layout_above="@+id/textAviso"
-        android:layout_alignEnd="@+id/textAviso"
-        android:layout_marginBottom="133dp" />
-
-    <TextView
-        android:id="@+id/textAviso"
-        android:layout_width="250dp"
-        android:layout_height="wrap_content"
-        android:text="Este Pedido pode variar entre 40 e 60 Minutos."
-        android:textColor="@android:color/background_dark"
-        android:textSize="18sp"
-        tools:layout_editor_absoluteX="67dp"
-        tools:layout_editor_absoluteY="527dp"
-        android:layout_above="@+id/btnProsseguir2"
-        android:layout_alignParentStart="true"
-        android:layout_marginStart="7dp"
-        android:layout_marginBottom="7dp" />
+        tools:layout_editor_absoluteY="176dp" />
 
     <Button
         android:id="@+id/btnProsseguir2"
         style="@style/Widget.AppCompat.Button.Borderless.Colored"
-        android:layout_width="wrap_content"
+        android:layout_width="125dp"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_marginBottom="117dp"
         android:background="@drawable/shape"
-        android:fontFamily="serif"
+        android:fontFamily="monospace"
         android:text="Prosseguir"
         android:textColor="@android:color/background_light"
         android:textStyle="bold"
         tools:layout_editor_absoluteX="247dp"
         tools:layout_editor_absoluteY="443dp"
-        android:layout_alignEnd="@+id/textQTD"
-        android:layout_alignStart="@+id/textQTD" />
-
-    <TextView
-        android:id="@+id/textQTD"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="cursive"
-        android:text="Quantidade?"
-        android:textColor="@color/colorPrimary"
-        android:textSize="24sp"
-        android:layout_alignBaseline="@+id/textViewRefri"
-        android:layout_alignBottom="@+id/textViewRefri"
-        android:layout_toEndOf="@+id/checkBoxBorda2" />
-
-    <EditText
-        android:id="@+id/editQtd"
-        android:layout_width="50dp"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/textQTD"
-        android:layout_marginStart="7dp"
-        android:layout_toEndOf="@+id/textAdicionais"
-        android:ems="10"
-        android:hint="x2"
-        android:inputType="number" />
+        android:layout_alignParentBottom="true"
+        android:layout_alignStart="@+id/CheckGoiabada"
+        android:layout_marginBottom="80dp" />
 
     <TextView
         android:id="@+id/PizzaNome"
-        android:layout_width="wrap_content"
+        android:layout_width="180dp"
         android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="60dp"
         android:text="pizza"
         android:textSize="24sp"
-        android:layout_above="@+id/textAdicionais"
         android:layout_alignStart="@+id/textAdicionais"
-        android:layout_marginBottom="8dp" />
+        android:layout_alignEnd="@+id/btnProsseguir2" />
 
     <TextView
         android:id="@+id/pizValor"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignEnd="@+id/textViewRefri"
-        android:layout_alignParentBottom="true"
-        android:layout_marginBottom="63dp"
-        android:text="TextView" />
+        android:layout_below="@+id/ordemBox"
+        android:layout_marginTop="34dp"
+        android:layout_toEndOf="@+id/textView7"
+        android:text="0"
+        android:textColor="@color/colorAccent" />
+
+    <Button
+        android:id="@+id/ordemBox"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/shape"
+        android:fontFamily="monospace"
+        android:text="Adicionar Borda"
+        android:textColor="@android:color/background_light"
+        android:layout_below="@+id/checkCheedar"
+        android:layout_alignEnd="@+id/CheckGoiabada"
+        android:layout_marginTop="22dp" />
 
     <TextView
-        android:id="@+id/userName"
+        android:id="@+id/textView4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_alignStart="@+id/textAviso"
-        android:layout_marginTop="9dp"
-        android:text="Nome" />
+        android:layout_marginTop="7dp"
+        android:text="+"
+        android:textColor="@color/colorPrimary"
+        android:layout_below="@+id/textView7"
+        android:layout_alignStart="@+id/textView8" />
+
+    <TextView
+        android:id="@+id/textBorda"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/textView8"
+        android:layout_alignBottom="@+id/textView8"
+        android:layout_toEndOf="@+id/textView8"
+        android:text="0"
+        android:textColor="@color/colorAccent" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:lineSpacingExtra="8sp"
+        android:text="------------------------"
+        android:textColor="@color/colorPrimary"
+        android:layout_toStartOf="@+id/ordemBox"
+        android:layout_below="@+id/textBorda" />
+
+    <TextView
+        android:id="@+id/TextTotal"
+        android:layout_width="50dp"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/textView3"
+        android:layout_below="@+id/textView3"
+        android:text="0,00"
+        android:textColor="@android:color/background_dark" />
+
+    <TextView
+        android:id="@+id/reais"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="R$"
+        android:textColor="@color/colorPrimary"
+        android:layout_below="@+id/textView3"
+        android:layout_toStartOf="@+id/TextTotal" />
+
+    <CheckBox
+        android:id="@+id/CheckGoiabada"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Goiabada - + R$ 3,00"
+        android:layout_alignTop="@+id/checkCheedar"
+        android:layout_alignEnd="@+id/checkCatupiry"
+        android:layout_alignStart="@+id/checkCatupiry" />
+
+    <TextView
+        android:id="@+id/textView7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="R$"
+        android:textColor="@color/colorPrimary"
+        android:layout_alignBaseline="@+id/pizValor"
+        android:layout_alignBottom="@+id/pizValor"
+        android:layout_alignStart="@+id/textView8" />
+
+    <TextView
+        android:id="@+id/textView8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="R$"
+        android:textColor="@color/colorPrimary"
+        android:layout_below="@+id/textView4"
+        android:layout_alignStart="@+id/reais" />
+
+    <TextView
+        android:id="@+id/textView9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/textView3"
+        android:layout_toEndOf="@+id/textBorda"
+        android:text=",00"
+        android:textColor="@color/colorAccent" />
+
+    <TextView
+        android:id="@+id/textView10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Pizza : "
+        android:textColor="@android:color/background_dark"
+        android:layout_alignBaseline="@+id/textView7"
+        android:layout_alignBottom="@+id/textView7"
+        android:layout_alignStart="@+id/textView11" />
+
+    <TextView
+        android:id="@+id/textView11"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Borda : "
+        android:textColor="@android:color/background_dark"
+        android:layout_below="@+id/textView4"
+        android:layout_alignStart="@+id/textView12" />
+
+    <TextView
+        android:id="@+id/textView12"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="SubTotal : "
+        android:textColor="@android:color/background_dark"
+        android:layout_below="@+id/textView3"
+        android:layout_toStartOf="@+id/textView8" />
+
+    <TextView
+        android:id="@+id/textView13"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=",00"
+        android:textColor="@color/colorAccent"
+        android:layout_alignBaseline="@+id/pizValor"
+        android:layout_alignBottom="@+id/pizValor"
+        android:layout_toEndOf="@+id/pizValor" />
+
 </RelativeLayout>

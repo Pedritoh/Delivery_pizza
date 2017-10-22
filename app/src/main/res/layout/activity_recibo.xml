@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FAEBD7"
+    android:background="#FFF9C4"
     tools:context="com.example.pedrito.delivery_pizza.Delivery.Recibo">
 
     <TextView
